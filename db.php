@@ -4,7 +4,7 @@ $host = "aws-0-us-east-2.pooler.supabase.com";
 $port = "6543";
 $dbname = "postgres";
 $username = "postgres.oajnnwxvdltdebleftil";
-$password = "TU-CONTRASEÑA-AQUÍ"; // Reemplaza esto con tu contraseña real de Supabase
+$password = "gucu100905"; // Reemplaza esto con tu contraseña real de Supabase
 
 // Intentar conectar usando la extensión pg_connect de PostgreSQL
 try {
