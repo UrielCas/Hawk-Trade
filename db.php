@@ -1,12 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = ""; // puede que tu amigo le haya puesto contraseña
-$dbname = "tienda";
+<?php
+$dsn = "pgsql:host=aws-0-us-east-2.pooler.supabase.com;port=6543;dbname=postgres";
+$username = "postgres.oajnnwxvdltdebleftil";
+$password = "[gucu100905]"; // Reemplaza [YOUR-PASSWORD] con tu contraseña real
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+try {
+    $conn = new PDO($dsn, $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
 }
 ?>
