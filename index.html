@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="estilos.css">
+
+  <meta charset="UTF-8">
+  
+  <title>Vender Productos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .formulario {
+      margin-bottom: 20px;
+    }
+    .producto {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    img {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Publicar Producto</h1>
+
+  <div class="filtro-categoria">
+  <h2>Filtrar por Categoría</h2>
+  <select id="filtroCategoria">
+    <option value="">Todas</option>
+    <option value="Ropa">Ropa</option>
+    <option value="Electrónica">Electrónica</option>
+    <option value="Hogar">Hogar</option>
+    <option value="Otros">Otros</option>
+  </select>
+</div>
+
+
+
+  <form class="formulario" id="formProducto" method="POST" enctype="multipart/form-data">
+  <input type="text" name="nombre" placeholder="Nombre del producto" required>
+  <input type="number" name="precio" placeholder="Precio" required>
+  <input type="text" name="descripcion" placeholder="Descripción" required>
+  
+  <div class="filtro-categoria">
+    <h2>Filtrar por Categoría</h2>
+    <select id="filtroCategoria" name="categoria"> <!-- Agregado name="categoria" -->
+      <option value="">Todas</option>
+      <option value="Ropa">Ropa</option>
+      <option value="Electrónica">Electrónica</option>
+      <option value="Hogar">Hogar</option>
+      <option value="Otros">Otros</option>
+    </select>
+  </div>
+
+  <input type="file" name="imagen" accept="image/*" required>
+  <button type="submit">Publicar</button>
+</form>
+
+
+  <h2>Productos Publicados</h2>
+  <div id="lista-productos"></div>
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>
+

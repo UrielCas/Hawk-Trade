@@ -1,0 +1,352 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F4F4F9;
+    color: #333333;
+    padding: 0;
+    margin: 0;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(90deg, #007D35, #005B96, #005B96); /* Degradado verde, azul y dorado */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Espaciado entre elementos */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del banner */
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra negra suave */
+}
+
+/* Saludo de bienvenida */
+.bienvenido {
+    font-size: 16px;
+    color: #F4F4F9; /* Blanco suave */
+    font-weight: 400;
+    text-align: right;
+}
+
+.bienvenido span {
+    font-weight: bold;
+    color: #FFD700; /* Dorado para destacar la matrícula */
+}
+
+/* Navegación */
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #FFD700; /* Fondo dorado al pasar el mouse */
+    color: #333; /* Texto oscuro */
+}
+
+/* Encabezados */
+h1, h2 {
+    color: #ffffff; /* Verde institucional */
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.formulario {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.formulario input, .formulario select, .formulario button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.formulario button {
+    background-color: #007D35; /* Verde institucional */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #005B96; /* Azul complementario */
+}
+
+/* Filtro de categoría */
+.filtro-categoria {
+    margin: 20px auto;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Estilo para el menú desplegable */
+.filtro-categoria select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #007D35; /* Verde institucional */
+    background-color: #F4F4F9; /* Fondo claro */
+    color: #333; /* Texto oscuro */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover para el menú desplegable */
+.filtro-categoria select:hover {
+    border-color: #005B96; /* Azul complementario */
+    background-color: #E8F5E9; /* Verde claro */
+}
+
+/* Estilo para las opciones del menú */
+.filtro-categoria select option {
+    padding: 10px;
+    background-color: #FFFFFF; /* Fondo blanco */
+    color: #333; /* Texto oscuro */
+}
+
+/* Lista de productos */
+#lista-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.producto {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    font-size: 20px;
+    color: #007D35; /* Verde institucional */
+    margin-bottom: 10px;
+}
+
+.producto p {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.producto .acciones button {
+    background-color: #005B96; /* Azul complementario */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.producto .acciones button:hover {
+    background-color: #003F6B; /* Azul más oscuro */
+}
+
+/* Modal */
+#modalCompra {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalCompra .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+#modalCompra .modal-content button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#modalCompra .modal-content button:first-child {
+    background-color: #007D35; /* Verde institucional */
+    color: white;
+}
+
+#modalCompra .modal-content button:first-child:hover {
+    background-color: #005B96; /* Azul complementario */
+}
+
+#modalCompra .modal-content button:last-child {
+    background-color: #e74c3c; /* Rojo para cancelar */
+    color: white;
+}
+
+#modalCompra .modal-content button:last-child:hover {
+    background-color: #c0392b;
+}
+
+/* Pie de página */
+footer {
+    background-color: #007D35; /* Verde institucional */
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f2f4f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+#container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  border-radius: 12px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #222;
+}
+
+.product-info p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.eliminar-btn {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.eliminar-btn:hover {
+  background-color: #c0392b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
