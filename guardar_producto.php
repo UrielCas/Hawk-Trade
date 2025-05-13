@@ -24,6 +24,17 @@ if (!preg_match('/^ZS[0-9]{8}$/', $matricula)) {
 }
 
 // Validar imagen
+/////////////////////////////////////////////////////////7
+
+$carpeta_destino = __DIR__ . "/uploads/";
+
+// Crear la carpeta si no existe
+if (!file_exists($carpeta_destino)) {
+    mkdir($carpeta_destino, 0777, true);
+}
+////////////////////////////////////////////////////////////
+
+
 $nombreImagen = "";
 if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
     $tiposPermitidos = ['image/jpeg', 'image/png', 'image/gif'];
