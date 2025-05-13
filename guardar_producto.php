@@ -47,8 +47,6 @@ if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
     $extension = pathinfo($nombreOriginal, PATHINFO_EXTENSION);
     $nombreImagen = uniqid("img_") . "." . $extension;
 
-    $directorioDestino = "uploads/" . $nombreImagen;
-
     if (!move_uploaded_file($_FILES['imagen']['tmp_name'], $directorioDestino)) {
         echo "Error al mover la imagen al servidor.";
         exit;
